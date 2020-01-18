@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+  <definition name="parent" template="/WEB-INF/view/inc/layout.jsp">
+    <put-attribute name="title" value="Tiles tutorial homepage" />
+    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />    
+    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+  </definition>
+  
+  <definition name="root.*"  template="/WEB-INF/view/inc/root-layout.jsp">
+  	<put-attribute name="title" value="Tiles tutorial homepage" />
+    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />    
+    <put-attribute name="body" value="/WEB-INF/view/{1}.jsp" />    
+    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+  </definition>
+    <definition name="notice.detail"  extends="parent">    
+  	<put-attribute name="title" expression="${notice.title}" />
+    <put-attribute name="aside" value="/WEB-INF/view/notice/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/view/notice/{1}.jsp" />    
+  </definition>
+  <definition name="notice.*"  extends="parent">    
+    <put-attribute name="aside" value="/WEB-INF/view/notice/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/view/notice/{1}.jsp" />    
+  </definition>
+  <!-- prepare 기능  -->
+  <definition name="member.*"   extends="parent" preparer="com.newlecture.web.tiles.MemberPreparer">
+    <put-attribute name="aside" value="/WEB-INF/view/member/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/view/member/{1}.jsp" />
+  </definition>
+  <definition name="student.*"   extends="parent">
+    <put-attribute name="aside" value="/WEB-INF/view/member/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/view/student/{1}.jsp" />
+  </definition>
+  <definition name="admin.board.*.*" extends="parent">    
+    <put-attribute name="aside" value="/WEB-INF/view/admin/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/view/admin/board/{1}/{2}.jsp" />    
+  </definition>  
+  <definition name="admin.*"   extends="parent">
+    <put-attribute name="aside" value="/WEB-INF/view/admin/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/view/admin/{1}.jsp" />
+  </definition>
+  
+</tiles-definitions>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="dom.js"></script>
+</head>
+<body>
+    <hr>
+    <section id="ex11">
+        <style>
+            #ex11{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }     
+            #ex11 .button{
+                background: lightblue;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+            }                       
+        </style>
+        <h1>Ajax로 게시글 관리하기</h1>              
+        <table border="1">
+            <thead>
+                <tr>
+                    <th class="w60">번호</th>
+                    <th class="expand">제목</th>
+                    <th class="w100">작성자</th>
+                    <th class="w100">작성일</th>
+                    <th class="w60">조회수</th>
+                </tr>
+            </thead>
+            <tbody> 
+            	<tr>
+				    <td>1</td>
+				    <td class="title indent text-align-left"><a href="detail.html">asdsfsfds</a> [0]</td>
+				    <td>asdf</td>
+				    <td>2019-11022</td>
+				    <td>2</td>
+				</tr> 
+				<tr class="detail">
+					<td colspan="5">
+						여기가 자세한 자세한자세한내용이빈다.<br />
+						여기가 자세한 자세한자세한내용이빈다.<br />
+						여기가 자세한 자세한자세한내용이빈다.<br />
+						여기가 자세한 내용이빈다.<br />
+						여기가 자세한 내용이빈다.<br />
+						여기가 자세한 내용이빈다.<br />
+						여기가 자세한 내용이빈다.<br />
+						여기가 자세한 내용이빈다.<br />
+					</td>
+				</tr>          
+                <tr>
+                    <td colspan="5" style="text-align: center; height: 50px; line-height: 50px;"> 게시된 글이 없습니다. </td>
+                </tr>
+            </tbody>            
+        </table>
+        <div class="pager">
+        	<a href="?p=1">1</a>
+        	<a href="?p=2">2</a>
+        	<a href="?p=3">3</a>
+        	<a href="?p=4">4</a>
+        	<a href="?p=5">5</a>        	
+        </div>
+        <div class="form">
+            <div><label>id:</label><input name="id"></div>
+            <div><label>title:</label><input name="title"></div>
+            <div><label>writerId:</label><input name="writerId"></div>
+            <div><label>regDate:</label><input name="regDate"></div>
+            <div><label>hit:</label><input name="hit"></div>
+        </div>
+		
+        <template class="tr-template">
+            <tr>
+                <td></td>
+                <td class="title indent text-align-left"><a href="detail.html"></a> [0]</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template>
+        <template class="detail-template">
+        	<tr class="detail">
+				<td colspan="5">
+				</td>
+			</tr>     
+        </template>
+        
+        <div>
+            <span class="button load-button">로드</span>
+            <span class="button add-button">행추가</span>
+            <span class="button reg-button">글등록</span>
+        </div>
+    </section>
+    <hr>
+    <section id="ex10">
+        <style>
+            #ex10{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }     
+            #ex10 .button{
+                background: lightblue;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+            }                       
+        </style>
+        <h1>노드 조작</h1>                      
+        <table>
+            <thead>
+                <tr>
+                    <th class="w60">번호</th>
+                    <th class="expand">제목</th>
+                    <th class="w100">작성자</th>
+                    <th class="w100">작성일</th>
+                    <th class="w60">조회수</th>
+                </tr>
+            </thead>
+            <tbody>   
+				        
+                <tr>
+                    <td colspan="5" style="text-align: center; height: 50px; line-height: 50px;"> 게시된 글이 없습니다. </td>
+                </tr>
+            </tbody>            
+        </table>
+        
+        <div class="form">
+            <div><label>id:</label><input name="id"></div>
+            <div><label>title:</label><input name="title"></div>
+            <div><label>writerId:</label><input name="writerId"></div>
+            <div><label>regDate:</label><input name="regDate"></div>
+            <div><label>hit:</label><input name="hit"></div>
+        </div>
+
+        <template class="tr-template">
+            <tr>
+                <td></td>
+                <td class="title indent text-align-left"><a href="detail.html"></a> [0]</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template>
+        
+        <div>
+            <span class="button load-button">로드</span>
+            <span class="button add-button">행추가</span>
+            <span class="button reg-button">글등록</span>
+        </div>
+    </section>
+    <hr>
+    <section id="ex9">
+        <style>
+            #ex9{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            } 
+
+            #ex9 .button{
+                background: lightblue;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+            }                      
+        </style>
+        <h1>노드 조작</h1>          
+        <div class="stage"></div>
+        <div>
+            <a class="button text-button">텍스트 추가</a>
+            <a class="button img-button">이미지추가 추가</a>
+            <a class="button link-button">링크 추가</a>
+            <a class="button del-button">첫번째 노드 삭제</a>
+        </div>
+    </section>
+    <hr>
+    <section id="ex8">
+        <style>
+            #ex8{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }
+            
+            #ex8 .file-button{
+                background: lightblue;
+                border-radius: 5px;
+                padding: 5px 10px;
+                cursor: pointer;
+            }
+            
+            #ex8 .file-button:hover{
+                color:red;                
+            }
+            
+        </style>
+        <h1>이벤트 트리거</h1>                      
+        <div>
+            <input type="file"><span class="file-button">파일선택</span>
+        </div>
+    </section>
+    <hr>
+    <section id="ex7">
+        <style>
+            #ex7{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }
+
+            #ex7 .stage{
+                height: 300px;
+                border:1px solid #797979;
+            }
+
+            #ex7 div:last-child > ul{
+                display: flex;
+            }
+
+            #ex7 div:last-child > ul>li{
+                width:100px;
+                height:100px;
+            }
+
+            #ex7 div:last-child > ul>li>img{
+                width:inherit;
+                height:inherit;
+                cursor: pointer;
+                opacity: 0.5;
+            }
+            #ex7 div:last-child > ul>li>img:hover{
+                opacity: 1;
+            }
+        </style>
+        <h1>이벤트 객체</h1>                      
+        <div class="stage">
+            <img src="">
+        </div>
+        <div>
+            <ul>
+                <li><a href="">이전</a></li>
+                <li><img src="../../images/img1.jpeg" ></li>
+                <li><img src="../../images/img2.jpg" ></li>
+                <li><img src="../../images/img3.jpeg" ></li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <section id="ex6">
+        <style>
+            #ex6{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }
+            #ex6 .stage{
+                height: 300px;
+                position: relative;
+            }
+            #ex6 .stage div{
+                position: absolute;
+                left:0px;
+                top:0px;
+                width:100px;
+                height: 100px;
+                border:1px solid blue;
+                transition:500ms;
+            }
+
+            #ex6 .stage .pos0{                
+                left:150px;
+                top:0px;                
+            }
+
+            #ex6 .stage .pos1{                
+                left:250px;
+                top:150px;                
+            }
+
+            #ex6 .stage .pos2{          
+                left:350px;
+                top:0px;                
+            }
+
+        </style>
+        <h1>엘리먼트 흩뿌리기와 위치 바꾸기</h1>
+        <div>
+            <input type="button" class="scat-button" value="뿌리기">            
+            <input type="button" class="swap-button" value="바꾸기">            
+        </div>        
+        <div class="stage">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>            
+        </div>
+    </section>
+    <hr>
+    <section id="ex5">
+        <style>
+            #ex5{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }      
+            #ex5 .progress{
+                height: 30px;
+                border:1px solid #e9e9e9;
+            }
+            #ex5 .progress>span:first-child{
+                display: inline-block;
+                width:350px;
+                height: 100%;
+                background:springgreen;
+            }      
+        </style>
+        <h1>setTimeout/setInterval</h1>
+        <div>
+            <input type="button" class="countdown-button" value="카운트다운">            
+        </div>        
+        <div class="status">
+            <div>
+                <label>남은 시간:</label><input value="10" readonly />
+            </div>
+            <div class="progress">
+                <span></span><span>10</span>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="ex4">
+        <style>
+            #ex4{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }
+            #ex4 .stage{
+                position: relative;
+                height: 300px;
+            }
+            #ex4 .stage div{
+                width:100px;
+                height: 100px;                
+            }
+            #ex4 .stage div:first-child{
+                background: seagreen;
+                position: absolute;
+                left:100px;
+                top:30px;
+            }
+
+            #ex4 .stage div:first-child+div{
+                background: springgreen;
+                position: absolute;
+                left:300px;
+                top:200px;
+            }
+        </style>
+        <h1>Selector API를 이용한 노드 선택</h1>
+        <div>
+            <input type="button" class="move-button" value="이동">            
+        </div>        
+        <div class="stage">
+            <div>1</div>
+            <div>2</div>
+        </div>
+    </section>
+    <hr>
+    <section id="ex3">
+        <style>
+            #ex3{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }
+
+            #ex3 ul{
+                display: flex;
+            }
+            #ex3 li{
+                width:50px;
+                height: 50px;
+                border:1px solid gray;
+            }
+            #ex3 .current{
+                background:pink;
+            }
+        </style>
+        <h1>노드 순회하기</h1>
+        <div>
+            <input type="button" class="prev-button" value="앞으로"> 
+            <input type="button" class="next-button" value="뒤로">            
+            <input type="button" class="up-button" value="위로"> 
+            <input type="button" class="down-button" value="아래로"> 
+        </div>        
+        <div class="stage">
+            <ul>
+                <li class="current">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+            </ul>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <section id="ex2">
+        <style>
+            #ex2{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }
+
+            #ex2 img{
+                width:100px;           
+            }
+
+            #ex2 input[type='text']{
+                width:50px;
+            }
+        </style>
+        <h1>스타일 다루기 예제</h1>
+        <div>
+            <label>너비:</label>
+            <input type="text" class="width" value="100" dir="rtl">
+            <span>px</span>
+            <label>높이:</label>
+            <input type="text" class="height" value="100" dir="rtl">
+            <span>px</span>
+            <input type="button" class="button" value="적용">            
+        </div>
+        <!-- 스타일 속성을 사용할 때의 주의사항 : 속성명칭 -->
+        <div>
+            <label>경계선 스타일:</label>
+            <input type="text" class="border-style" value="solid">
+            <label>경계선 색상:</label>
+            <input type="text" class="border-color" value="#000">
+            <label>경계선 두께:</label>
+            <input type="text" class="border-width" value="0">
+            <span>px</span>
+        </div>
+        <div>
+            <img style="width:100px;" src="../../images/jeju.png" >
+        </div>
+    </section>
+    <hr>
+    <section id="ex1">
+        <style>
+            #ex1{
+                border:1px solid #e9e9e9;
+                padding: 20px;
+            }
+        </style>
+        <h1>계산기 프로그램</h1>
+        <div>
+            <input type="text" class="x" value="3">
+            <input type="text" class="y" value="4">
+            <input type="button" class="calc" value="계산">
+            <input type="text" class="result" >
+        </div>
+    </section>
+</body>
+</html>

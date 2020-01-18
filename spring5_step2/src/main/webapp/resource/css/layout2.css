@@ -1,0 +1,97 @@
+@charset "UTF-8";
+@import url("reset.css");
+
+#header{
+	/* width: 100%; */
+	--width: 100%;
+	height: 70px;
+	--overflow: hidden;
+}
+
+#header>div{
+	width:960px;
+	height:100%;
+	margin-left:auto;
+	margin-right:auto;	
+}
+
+#visual{
+	height: 171px;
+	
+	--background: #313131 url("../images/bg-visual.png") no-repeat center;
+	
+	border-top:3px solid #8CBA34;
+
+	position: relative;
+	font-size: 20px;
+}
+
+	#visual>div{
+		font-size: 10px;
+		width:960px;
+		height:100%;
+		margin-left:auto;
+		margin-right:auto;
+		
+		text-align: center;
+	}
+
+#body{
+	min-height: 300px;
+	border-top:5px solid #8CBA34;
+	margin-top:1px;
+}
+
+	#body>div{	
+		
+		width:960px;		
+		min-height:inherit;
+		margin-left:auto;
+		margin-right:auto;
+		background: url(../images/bg-body.png) repeat-y left top;
+	}
+
+	#body>div::after{
+		content: "막내 자식이야~";
+		display: block;
+		clear:left;
+		height: 0px;
+		visibility: hidden;
+		overflow: hidden;		
+	}
+	
+	#aside{
+		min-height: inherit;
+		
+		width:205px;
+		float:left;
+		background:url(../images/bg-aside-title.png) no-repeat left top;
+	}
+	
+	#main{
+		box-sizing: border-box;
+		min-height: inherit;		
+		
+		width:755px;
+		float:left;
+
+		padding-left:35px;
+		padding-top:45px;
+
+	}
+	
+	
+
+#footer{
+	height: 100px;
+	background: #313131;	
+}
+
+	#footer>div{
+		width:960px;
+		height:100%;
+		margin-left:auto;
+		margin-right:auto;
+		
+		text-align: center;
+	}

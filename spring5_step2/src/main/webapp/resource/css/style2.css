@@ -1,0 +1,98 @@
+@import url(layout2.css);
+
+
+.d-none{
+    display: none;
+}
+
+/* 콘텐츠를 수납하는 가구를 꾸미는 곳 */
+
+body{
+	
+	list-style: decimal;
+
+	font-family: 돋움, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #979797;
+}
+
+/* --- header -------------------------------------- */
+#header{
+    background: red;
+    position: sticky;
+    left:0px;
+    top: 0px;
+}
+
+#header>div{
+    position: relative;
+}
+
+#logo{
+    display: inline-block;
+    width:182px;
+    height: 35px;
+    background: url(../images/logo.png) no-repeat left top;
+    text-indent: -999px;
+    overflow: hidden;
+
+    position: absolute; /* 기본좌표:"문서"의 좌/우/상/하단 꼭지점 */
+    --position: relative; /* 기본좌표:static일 경우의 현재 위치에서부터  */
+    --position: fixed; /* 기본좌표: "화면"의 좌/우/상/하단 꼭지점  */
+    --position: sticky; /* 기본좌표: "화면"의 꼭지점, 단 겹치지 않음??  */
+    left:0px;  
+    top: 23px;
+}
+
+#main-menu{
+    display: inline-block;
+}
+
+    #main-menu>ul{
+        display: flex;
+
+        font-family: "맑은 고딕", 고딕, Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+        color:#000;
+    }
+
+        #main-menu>ul>li{
+            padding-left: 24px;
+            background: url(../images/bg-main-menu-vsp.png) no-repeat 12px center;
+        }
+
+        #main-menu>ul>li:first-child{
+            padding-left: 0px;
+            background: none;
+        }
+
+            #main-menu a:hover{
+                color:#ff6a00;
+            }
+
+#favorite-menu{
+    display: inline-block;
+}
+
+/* #favorite-menu li:first-child{ */
+#favorite-menu li:nth-child(1){
+    display: inline-block;
+    width:72px;
+    height: 17px;
+    background: url(../images/txt-mypage.png) no-repeat left top;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+/* #favorite-menu li:first-child+li{ */
+#favorite-menu li:nth-child(2){
+    display: inline-block;
+    width:72px;
+    height: 17px;
+    background: url(../images/txt-customer.png) no-repeat left top;
+    text-indent: -999px;
+    overflow: hidden;
+}
+
+
